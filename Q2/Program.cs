@@ -4,6 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+/*2.	Create a C# console application. Consider a scenario where you are designing a system to manage employee information. Design a class named "Employee" with the following properties and methods.
+
+a)	Create an instance of the "Employee" class, representing an employee with an ID of 101, full name "John Doe," and a salary of 50000.
+b)	Access and display the employee ID using the read-only property.
+c)	Update the full name of the employee using the read-write property.
+d)	Attempt to modify the salary directly from external code (outside the class). Observe and comment on the result
+*/
+
 namespace Q2
 {
     internal class Program
