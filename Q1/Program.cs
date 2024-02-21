@@ -5,6 +5,16 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
+/*1.	Design a C# class named Course that encapsulates information about a student's course and demonstrates proper use of access specifiers and properties. The class should have the following:
+
+•	Private fields for courseName, instructorName, and grade (double between 0 and 100)
+•	Public properties for CourseName (read-only) and Grade (read-only) with validation (throw exceptions for invalid data)
+•	A public method SetInstructorName to set the instructor's name with validation (empty strings not allowed)
+•	A private method CalculateLetterGrade to calculate the letter grade based on the grade (A-F) and return it as a string
+•	A public method PrintCourseInfo that displays the course name, instructor name, and letter grade without revealing the actual numeric grade
+
+*/
+
 namespace Tutorial03_Q1
 {
     public class Course
