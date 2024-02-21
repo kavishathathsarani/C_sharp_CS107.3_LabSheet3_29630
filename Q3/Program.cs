@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 
 a)	Create an instance of the "Product" class, representing a product with an ID of 101, name "Laptop," price $800, and quantity in stock 10
-b)	Access and display the name, price, and quantity of the product.
+b)	Access and display the name, price, and quantity of the product
 c)	Attempt to modify the product's ID from external code (outside the class). Observe and comment on the result
 */
 namespace Q3
