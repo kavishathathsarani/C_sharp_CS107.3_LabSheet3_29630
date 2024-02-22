@@ -12,20 +12,20 @@ a)	Create an instance of the "Product" class, representing a product with an ID 
 b)	Access and display the name, price, and quantity of the product
 c)	Attempt to modify the product's ID from external code (outside the class). Observe and comment on the result
 */
-namespace Q3
+
+namespace Labsheet3que3
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             Product product = new Product(101, "Laptop", 800, 10);
-            Console.WriteLine($"Product Id: {product.productId}");
-            Console.WriteLine($"Product Name: {product.productName}");
-            Console.WriteLine($"Product Price: ${product.price}");
-            Console.WriteLine($"Quantity: {product.quantityInStock}\n");
+            Console.WriteLine($"Product Information");
+            product.DisplayProductInfo();
 
-            product.productId = 102;
-            Console.WriteLine($"Product Id: {product.productId}");
+            //try to modify this product id from external code
+            //this will result in a compile time error because the productid field is private
+            //product.productId=102;//uncommenting this line cause a compile error
 
             Console.ReadLine();
 
@@ -34,7 +34,7 @@ namespace Q3
 
     public class Product
     {
-        public int productId;
+        private int productId;
         public string productName;
         public double price;
         public int quantityInStock;
@@ -47,14 +47,32 @@ namespace Q3
             this.quantityInStock = quantityInStock;
         }
 
-        public void AddProduct()
+        public void AddProduct(int quantity)
         {
-
+            quantityInStock += quantity;
+            Console.WriteLine($"{quantity}{productName}(s) added to stock.Total quantity in stock: {quantityInStock}");
         }
 
-        public void BuyProduct()
+        public void BuyProduct(int quantity)
         {
+            if (quantityInStock <= quantityInStock)
+            {
+                quantityInStock -= quantity;
+                Console.WriteLine($"{quantity}{productName}(s) sold.remaining quantity in stock: {quantityInStock}");
+            }
 
+            else
+            {
+                Console.WriteLine($"insufficient stock. only{quantityInStock}{productName}(s) available.");
+            }
+        }
+
+        public void DisplayProductInfo()
+        {
+            Console.WriteLine($"Product Id: {productId}");
+            Console.WriteLine($"Product Name: {productName}");
+            Console.WriteLine($"Product Price: ${price}");
+            Console.WriteLine($"Quantity: {quantityInStock}");
         }
     }
 }
